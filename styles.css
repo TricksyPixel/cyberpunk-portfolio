@@ -35,7 +35,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    font-size: 3.5em;
+    font-size: 3.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
 }
 
 p {
@@ -53,8 +57,12 @@ a:hover {
     color: var(--color-accent-2);
 }
 
-.first-paragraph-padding {
-    padding-top: 0.75em;
+.paragraph-padding {
+    padding-top: 0.75rem;
+}
+
+.indent {
+    padding-left: 1rem;
 }
 
 #home {
@@ -72,7 +80,7 @@ a:hover {
 }
 
 .purple-text {
-    color: var(--color-accent-1)
+    color: var(--color-accent-1);
 }
 
 .button-styling {
@@ -144,14 +152,15 @@ a:hover {
 }
 
 .hero-container > h1 {
-    font-size: 8em;
+    font-size: clamp(3rem, 9vw, 8rem);
     letter-spacing: -0.04em;
+    line-height: 0.95;
 }
 
 .hero-container > p {
-    font-size: 2em;
-    padding-left: 3em;
-    padding-top: 0.5em;
+    font-size: clamp(1rem, 7vw, 2rem);
+    padding-left: 5rem;
+    padding-top: 0.5rem;
     opacity: 70%;
 }
 
@@ -199,6 +208,7 @@ a:hover {
 .projects-blurb-container > p {
     padding-left: 1rem;
     border-left: 1px solid var(--color-accent-1);
+    opacity: 70%;
 }
 
 .projects-grid-container {
@@ -259,7 +269,6 @@ a:hover {
     flex: 1;
     color: var(--color-text);
     font-family: "IBM Plex Mono", monospace;
-
     border-top: 1px solid var(--color-accent-1);
     border-left: 1px solid var(--color-accent-1);
     padding: 2rem 0 0 2rem;
@@ -267,12 +276,11 @@ a:hover {
 }
 
 .about-text-container > p {
-    padding-left: 1em;
+    padding-left: 1rem;
 }
 
-.about-text-container > ul {
-    padding-left: 2rem;
-    list-style-type: none;
+.about-text-container > p:first-of-type {
+    opacity: 70%;
 }
 
 .about-image-container {
@@ -307,6 +315,9 @@ a:hover {
     display: flex;
     flex-direction: column;
     margin-top: 10rem;
+}
+.contact-text > p {
+    opacity: 70%;
 }
 
 .contact-text {
