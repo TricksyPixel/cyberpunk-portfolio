@@ -127,18 +127,32 @@ a:hover {
     position: fixed;
     top: 0;
     left: 0;
+    height:5rem;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 2rem;
     z-index: 999;
+    display: flex;
+    align-items: center;
 }
 
-.nav-links-container>ul {
+.top-navigation-menu {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    width: 100%;
+}
+
+.top-navigation-menu>ul {
     display: flex;
     gap: 4rem;
     list-style-type: none;
+}
+
+.logo-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2rem;
+    z-index: 1001;
 }
 
 .logo {
@@ -153,11 +167,121 @@ a:hover {
     transition: color 0.8s ease-in;
 }
 
+.button-menu {
+    background: none;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    position: absolute;
+    right: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-accent-1);
+    cursor: pointer;
+}
+
+.button-close-icon,
+.button-open-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.button-close-icon {
+    display: none;
+}
+
+@media (width >= 650px) {
+    .button-menu {
+        display: none;
+    }
+}
+
+@media (width < 650px) {
+    .main-navigation {
+        border-bottom: none;
+    }
+
+    .top-navigation-menu {
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        right: 0;
+        height: 0;
+        overflow: hidden;
+
+        flex-direction: column;
+        justify-content: flex-start;
+
+        background-color: var(--color-primary);
+        border-bottom: 1px solid var(--color-accent-1);
+
+        transition: height 0.3s ease;
+    }
+
+    .button-menu[aria-expanded="true"] {
+        .button-open-icon {
+            display: none;
+        }
+
+        .button-close-icon {
+            display: block;
+        }
+
+        + .top-navigation-menu {
+            height: calc(100vh - 5rem);
+        }
+    }
+
+    /* .top-navigation-menu::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-accent-1);
+    } */
+
+    /* .button-open[aria-expanded="true"] {
+        + .top-navigation-menu {
+            height: calc(100vh - 5rem);
+        }
+
+        + .button-close {
+            top: 2.5rem;
+            right: 2.5rem;
+            transform: translateY(-50%);
+            position: fixed;
+        }
+
+        display: none;
+    } */
+
+    .top-navigation-menu>ul {
+        flex-direction: column;
+        font-size: 1.3rem;
+        text-align: center;
+        padding-top: 5rem;
+    }
+
+    /* .button-close,
+    .button-open {
+        top: 2.5rem;
+    } */
+}
+
 /* Hero Section */
 
 .hero-container {
     margin: 30vh 5vw 20vh 10vw;
     height: 80vh;
+}
+
+@media (max-width: 650px) {
+    .hero-container {
+        margin-top: 20vh;
+    }
 }
 
 .hero-container>h1 {
@@ -184,7 +308,7 @@ a:hover {
 @media (max-width: 650px) {
     .hero-blurb {
         margin-left: 1rem;
-        width: 80%;
+        width: 90%;
     }
 }
 
@@ -226,6 +350,14 @@ a:hover {
     padding-left: 1rem;
     border-left: 1px solid var(--color-accent-1);
     opacity: 70%;
+}
+
+@media (max-width: 650px) {
+    .projects-blurb-container {
+        width: 90%;
+        padding-left: 2.5rem;
+        padding-right: 2rem;
+    }
 }
 
 .projects-grid-container {
@@ -319,6 +451,31 @@ a:hover {
     object-fit: contain;
 }
 
+@media (max-width: 650px) {
+    .about-image-container {
+        display: none;
+    }
+
+    .about-text-container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 1rem;
+        border: none;
+    }
+
+    .about-para-border {
+        border-left: 1px solid var(--color-accent-1);
+    }
+
+    .about-text-container>h3 {
+        padding-left: 1rem;
+    }
+
+    .about-text-container>h3:first-of-type {
+        padding-top: 2rem;
+    }
+}
+
 .about-line {
     margin: 0 auto;
     margin-bottom: 1rem;
@@ -397,4 +554,27 @@ footer {
     opacity: 70%;
     font-size: 0.75em;
     letter-spacing: 0.1em;
+}
+
+@media (max-width: 650px) {
+    .footer-grid {
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
+
+    .footer-grid-navigation>ul {
+        flex-direction: column;
+        gap: 2rem;
+        font-size: 1.3rem;
+    }
+
+    .footer-grid-socials {
+        font-size: 2rem;
+        padding-top: 1rem;
+    }
+
+    .footer-grid-socials>a {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
