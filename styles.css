@@ -285,7 +285,7 @@ a:hover {
 }
 
 .hero-container>h1 {
-    font-size: clamp(3rem, 9vw, 8rem);
+    font-size: clamp(3rem, 9vw, 7rem);
     letter-spacing: -0.04em;
     line-height: 0.95;
 }
@@ -344,6 +344,10 @@ a:hover {
     flex-direction: column;
     width: 50%;
     margin: 2.5rem auto;
+}
+
+.projects-blurb-container>h2 {
+    padding-bottom: 1rem;
 }
 
 .projects-blurb-container>p {
@@ -438,6 +442,14 @@ a:hover {
 
 .about-text-container>p:first-of-type {
     opacity: 70%;
+}
+
+.about-text-container>p:last-of-type {
+    padding-bottom: 2rem;
+}
+
+.about-text-container>h3 {
+    padding-top: 2rem;
 }
 
 .about-image-container {
