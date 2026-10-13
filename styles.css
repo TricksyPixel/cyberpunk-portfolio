@@ -421,19 +421,18 @@ a:hover {
 
 /* About Section */
 .about-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
 }
 
 .about-text-container {
-    flex: 1;
     color: var(--color-text);
     font-family: "IBM Plex Mono", monospace;
     border-top: 1px solid var(--color-accent-1);
     border-left: 1px solid var(--color-accent-1);
-    padding: 2rem 0 0 2rem;
+    padding: 2rem 2rem 0 2rem;
+    width: auto;
     margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 .about-text-container>p {
@@ -452,22 +451,24 @@ a:hover {
     padding-top: 2rem;
 }
 
-.about-image-container {
-    flex: 1;
-    height: 50vh;
+.about-content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 6rem;
+    align-items: start;
 }
 
-.about-image-container>img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.about-main-content,
+.about-skills-content {
+    min-width: 0;
 }
 
 @media (max-width: 650px) {
-    .about-image-container {
-        display: none;
+    .about-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
-
+    
     .about-text-container {
         margin-left: 1rem;
         margin-right: 1rem;
@@ -555,6 +556,16 @@ footer {
 
 .footer-grid-socials {
     text-align: right;
+}
+
+.github-logo,
+.linkedin-logo {
+    max-height: 24px;
+    width: auto;
+}
+
+.github-logo {
+    padding-right: 0.4rem;
 }
 
 .legal-container {
