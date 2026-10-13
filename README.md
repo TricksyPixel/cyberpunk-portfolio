@@ -1,7 +1,6 @@
 # Cyberpunk Themed Portfolio Website
 
-**Work in progress:**  
-My portfolio, built with HTML and vanilla CSS.  
+My portfolio, built with HTML, CSS, and JavaScript.
   
 **Preview:**  
-[cyberpunk-portfolio](https://tricksypixel.github.io/cyberpunk-portfolio/)
+[cyberpunk-portfolio](https://kiercollins.com)
